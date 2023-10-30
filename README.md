@@ -127,7 +127,7 @@ GET http://localhost:8080/api/v1/orders
 Fetch orders for a specific user by sending a GET request with the user's username as a path parameter:
 
 ```
-GET http://localhost:8080/api/v1/orders/user1
+GET http://localhost:8080/api/v1/orders/{userLogin}
 ```
 
 **Authentication:**
