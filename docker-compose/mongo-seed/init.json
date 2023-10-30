@@ -1,0 +1,32 @@
+[
+    {
+        "userType": "admin", 
+        "login": "admin", 
+        "firstName": "John", 
+        "lastName": "White", 
+        "email": "JohnWhite@gmail.com", 
+        "orders": [
+        
+        ]
+    },
+    {
+        "userType": "customer", 
+        "login": "user1", 
+        "firstName": "Marco", 
+        "lastName": "Polo", 
+        "email": "MarcoPolo@gmail.com", 
+        "orders": [
+        
+        ]
+    },
+    {
+        "userType": "customer", 
+        "login": "user2", 
+        "firstName": "Arya", 
+        "lastName": "Stark", 
+        "email": "Arya@outlook.com", 
+        "orders": [
+        
+        ]
+    }
+]

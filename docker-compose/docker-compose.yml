@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+
+  orders:
+    image: "kosiara2137/orders:v1"
+    container_name: orders-ms
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - mymongodb
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        window: 120s
+    networks: 
+      - testnetwork
+    environment: 
+      - SPRING_DATA_MONGODB_HOST=mymongodb
+
+  mymongodb: 
+    container_name: mymongodb
+    image: mongo
+    ports: 
+      - "27017:27017"
+    volumes:
+      - dbdata1:/data/db
+    networks: 
+      - testnetwork
+
+  mongo-seed:
+    container_name: mongo-seed
+    image: mongo
+    links:
+      - mymongodb
+    volumes:
+      - ./mongo-seed:/mongo-seed
+    command:
+      /mongo-seed/import.sh
+    depends_on:
+      - mymongodb
+    networks: 
+      - testnetwork
+
+networks:
+  testnetwork:
+    driver: "bridge"
+
+volumes:
+  dbdata1:
