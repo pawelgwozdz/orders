@@ -39,7 +39,7 @@ POST http://localhost:8080/api/v1/orders
 ```
 
 **Authentication:**
-- Username: basic user1
+- Username: user1
 - Password: test
 
 **Request Body:**
