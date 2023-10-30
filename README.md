@@ -110,6 +110,18 @@ GET http://localhost:8080/api/v1/orders
 - Username: admin
 - Password: test
 
+### Get user Orders (GET)
+
+Retrieve all orders by sending a GET request to the following URL:
+
+```
+GET http://localhost:8080/api/v1/orders
+```
+
+**Authentication:**
+- Username: user1
+- Password: test
+
 ### Get Orders for a Specific User (GET)
 
 Fetch orders for a specific user by sending a GET request with the user's username as a path parameter:
